@@ -21,22 +21,22 @@ class ScreenOne extends React.Component{
 		  //   	}
 		  //   }
 	  	// });
-	  	Linking.addEventListener('url', this.handleOpenURL);
+	  	// Linking.addEventListener('url', this.handleOpenURL);
   	}
   
-	handleOpenURL = (event) => {
-		if(event.url){
-			const route = event.url.replace(/.*?:\/\//g, "");//extracts host from here
-		    console.log("route", route);
-		    if(route === "deeplink"){
-	    		this.props.navigation.navigate("ScreenTwo");
-	    	}
-		}
-	}
+	// handleOpenURL = (event) => {
+	// 	if(event.url){
+	// 		const route = event.url.replace(/.*?:\/\//g, "");//extracts host from here
+	// 	    console.log("route", route);
+	// 	    if(route === "deeplink"){
+	//     		this.props.navigation.navigate("ScreenTwo");
+	//     	}
+	// 	}
+	// }
 
   	componentWillUnmount = () => {
   		// BackHandler.removeEventListener('hardwareBackPress', () => true);
-  		Linking.removeEventListener('url', this.handleOpenURL);
+  		// Linking.removeEventListener('url', this.handleOpenURL);
   	}
 
 	render(){
