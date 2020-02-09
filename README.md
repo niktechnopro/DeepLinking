@@ -1,4 +1,4 @@
-# DeepLinking
+# Deep Linking on Android
 Experiment with Deep Linking for Android React-Native app. Developped to test functionality.
 
 ## Overview of Project:
