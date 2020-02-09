@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native"
 
 class ScreenTwo extends React.Component{
 	static navigationOptions = {
-    	title: 'Second Page for deep linking',
+    	title: "Deep Linked, ScreenTwo",
   	};
 
 	render(){

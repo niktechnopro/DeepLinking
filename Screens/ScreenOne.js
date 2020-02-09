@@ -1,42 +1,29 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, Linking, BackHandler } from "react-native"
+import { View, Text, StyleSheet, Button, Linking } from "react-native"
 
 
 class ScreenOne extends React.Component{
 	static navigationOptions = {
-    	title: 'Home Page',
+    	title: "screenOne",
   	};
 
 
   	componentDidMount = () => {
-  		// BackHandler.addEventListener('hardwareBackPress', () => true);
-  		console.log("ScreenOne mounted:");
-  		// const url = Linking.getInitialURL().then(url => {//one way, I gues another way is to reach into Navigator directly
-		  //   if (url) {
-		  //   	console.log("url: ", url);
-		  //    	const route = url.replace(/.*?:\/\//g, "");//extracts host from here
-		  //   	console.log("route", route);
-		  //   	if(route === "deeplink"){
-		  //   		this.props.navigation.navigate("ScreenTwo");
-		  //   	}
-		  //   }
-	  	// });
-	  	// Linking.addEventListener('url', this.handleOpenURL);
+	  	Linking.addEventListener("url", this.handleDeepLink);
   	}
   
-	// handleOpenURL = (event) => {
-	// 	if(event.url){
-	// 		const route = event.url.replace(/.*?:\/\//g, "");//extracts host from here
-	// 	    console.log("route", route);
-	// 	    if(route === "deeplink"){
-	//     		this.props.navigation.navigate("ScreenTwo");
-	//     	}
-	// 	}
-	// }
+	handleDeepLink = (event) => {
+		console.log("handleDeepLink event", event);
+		if(event.url){
+			const route = event.url.replace(/.*?:\/\//g, "");//extracts host from here
+		    if(route === "deeplink"){
+	    		this.props.navigation.navigate("ScreenTwo");
+	    	}
+		}
+	}
 
   	componentWillUnmount = () => {
-  		// BackHandler.removeEventListener('hardwareBackPress', () => true);
-  		// Linking.removeEventListener('url', this.handleOpenURL);
+  		Linking.removeEventListener('url', this.handleDeepLink);
   	}
 
 	render(){
