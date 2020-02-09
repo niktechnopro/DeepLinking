@@ -8,23 +8,24 @@ class ScreenOne extends React.Component{
   	};
 
 
-  	componentDidMount = () => {
-	  	Linking.addEventListener("url", this.handleDeepLink);
-  	}
+  	//the following not needed if using react-navigation for deep link
+ //  	componentDidMount = () => {
+	//   	Linking.addEventListener("url", this.handleDeepLink);
+ //  	}
   
-	handleDeepLink = (event) => {
-		console.log("handleDeepLink event", event);
-		if(event.url){
-			const route = event.url.replace(/.*?:\/\//g, "");//extracts host from here
-		    if(route === "deeplink"){
-	    		this.props.navigation.navigate("ScreenTwo");
-	    	}
-		}
-	}
+	// handleDeepLink = (event) => {
+	// 	console.log("handleDeepLink event", event);
+	// 	if(event.url){
+	// 		const route = event.url.replace(/.*?:\/\//g, "");//extracts host from here
+	// 	    if(route === "deeplink"){
+	//     		this.props.navigation.navigate("ScreenTwo");
+	//     	}
+	// 	}
+	// }
 
-  	componentWillUnmount = () => {
-  		Linking.removeEventListener('url', this.handleDeepLink);
-  	}
+ //  	componentWillUnmount = () => {
+ //  		Linking.removeEventListener('url', this.handleDeepLink);
+ //  	}
 
 	render(){
 		const {navigate} = this.props.navigation;

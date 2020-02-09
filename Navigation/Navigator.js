@@ -7,11 +7,11 @@ import ScreenTwo from "../Screens/ScreenTwo";
 const NavigatorObject = createStackNavigator({
 	ScreenOne: {
 		screen: ScreenOne,
-		// path: ""//you need path property if you handle deep link with navigator
+		path: ""//you need path property if you handle deep link with navigator
 	},
 	ScreenTwo: {
 		screen: ScreenTwo,
-		// path: "deeplink"
+		path: "deeplink"
 	}
 }, {
     	initialRouteName: 'ScreenOne'
@@ -21,10 +21,10 @@ const NavigatorObject = createStackNavigator({
 const Navigator = createAppContainer(NavigatorObject);
 
 // remove path in case if you handle deep link manually
-const MainNavigator = () => <Navigator enableURLHandling={false} />;//this construct if we want to disable deeplinking in navigator and want to handle it manually from component
+// const MainNavigator = () => <Navigator enableURLHandling={false} />;
 
-//handling deep link directly through navigator
-// const prefix = 'app://';//scheme in AndroidMainfest
-// const MainNavigator = () => <Navigator uriPrefix={prefix} />
+// handling deep link directly through navigator
+const prefix = 'app://';//scheme in AndroidMainfest
+const MainNavigator = () => <Navigator uriPrefix={prefix} />
 
 export default MainNavigator;
