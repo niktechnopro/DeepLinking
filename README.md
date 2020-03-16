@@ -7,3 +7,6 @@ This is a test to investigate how to enable Deep Link on Android React Native Ap
 ## Technologies, Frameworks, and Programming Languages used:
 * React-Native
 * XML
+
+## Full explanation on Medium:
+* https://medium.com/@niktechnopro/deep-linking-in-android-react-native-app-d2dc90622c22
